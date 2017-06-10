@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_99"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/main_rb_home"
+        style="@style/main_btn"
+        android:checked="true"
+        android:drawableTop="@drawable/tab_home"
+        android:paddingTop="@dimen/height_10"
+        android:text="首页" />
+
+    <RadioButton
+        android:id="@+id/main_rb_order"
+        style="@style/main_btn"
+        android:drawableTop="@drawable/tab_order"
+        android:paddingTop="@dimen/height_10"
+        android:text="订单" />
+
+    <RadioButton
+        android:id="@+id/main_rb_presonal"
+        style="@style/main_btn"
+        android:drawableTop="@drawable/tab_por"
+        android:paddingTop="@dimen/height_10"
+        android:text="我的" />
+
+</LinearLayout>
