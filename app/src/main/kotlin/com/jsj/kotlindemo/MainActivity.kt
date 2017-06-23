@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
 //        demo1();
 //        demo3();
 //
-//        val person: Person = Person("小明");
+        val person: Person = Person("小明");
 //        val person2: Person = Person("小红", 12);
 //        println("name:" + person2.name + "age:" + person2.age);
 
