@@ -27,6 +27,7 @@ class GetNetActivity : AppCompatActivity() {
         adapter.setOnItemClickListener { pos -> toast("$pos") }
         recyclerView.adapter = adapter;
 
+
     }
 
     fun initData(){

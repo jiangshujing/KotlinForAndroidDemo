@@ -55,7 +55,7 @@ class ListAdapter(val items: List<ForecastBean>) : RecyclerView.Adapter<Recycler
 //        }
 
         //类型转换使用as
-        (holder as ItemViewHolder).bindItemView(position);
+        (holder as ItemViewHolder).bindItemView(position, mListener!!)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
@@ -65,11 +65,14 @@ class ListAdapter(val items: List<ForecastBean>) : RecyclerView.Adapter<Recycler
 
     inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        fun bindItemView(position: Int) {
+        fun bindItemView(position: Int, listener: ((pos: Int) -> Unit)) {
             with(itemView) {
                 tv_name.text = items[position].name;
 //                iv_image.setImageResource(R.mipmap.ic_launcher_round);
                 Picasso.with(context.applicationContext).load(items[position].image).into(iv_image)
+                ll_root.setOnClickListener {
+                    listener.invoke(position)
+                }
             }
         }
     }

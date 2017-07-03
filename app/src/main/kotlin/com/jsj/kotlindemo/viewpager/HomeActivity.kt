@@ -1,10 +1,14 @@
 package com.jsj.kotlindemo.viewpager
 
+import android.app.Activity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.Toast
 import com.jsj.kotlindemo.R
+import com.jsj.kotlindemo.viewpager.module.home.ui.HomeFragment
+import com.jsj.kotlindemo.viewpager.module.middle.OrderFragment
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.main_tab.*
 
@@ -36,6 +40,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         main_rb_home.setOnClickListener(this)
         main_rb_order.setOnClickListener(this)
         main_rb_presonal.setOnClickListener(this)
+
     }
 
     override fun onClick(p0: View?) {
@@ -61,5 +66,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 main_rb_presonal.isChecked = true
             }
         }
+    }
+
+
+    inline fun Activity.toast(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 }

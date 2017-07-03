@@ -19,7 +19,7 @@
         style="@style/main_btn"
         android:drawableTop="@drawable/tab_order"
         android:paddingTop="@dimen/height_10"
-        android:text="订单" />
+        android:text="找片" />
 
     <RadioButton
         android:id="@+id/main_rb_presonal"

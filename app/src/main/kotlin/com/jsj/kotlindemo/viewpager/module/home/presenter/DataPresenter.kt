@@ -1,4 +1,4 @@
-package com.jsj.kotlindemo.viewpager.presenter
+package com.jsj.kotlindemo.viewpager.module.home.presenter
 
 /**
  *

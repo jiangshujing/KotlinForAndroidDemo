@@ -5,11 +5,15 @@ package com.jsj.kotlindemo.viewpager.mvp_base
  * @author jsj
  * @since 17/6/12
  */
-class BaseModel<SubP>(val presenter: SubP) {
+abstract class BaseModel<SubP> {
 
-    protected val mIPresenter: SubP = null!!;
+    protected var mIPresenter: SubP? = null;
 
-    init {
+    constructor(){
+
+    }
+
+    constructor(presenter: SubP) : this() {
         this.mIPresenter = presenter;
     }
 }

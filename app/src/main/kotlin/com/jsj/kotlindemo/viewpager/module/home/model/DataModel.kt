@@ -1,4 +1,6 @@
-package com.jsj.kotlindemo.viewpager.model
+package com.jsj.kotlindemo.viewpager.module.home.model
+
+import com.jsj.kotlindemo.viewpager.module.home.bean.Bean
 
 /**
  *
@@ -11,7 +13,7 @@ interface DataModel {
 
     interface DataListener {
 
-        fun onSucceed()
+        fun onSucceed(date: Bean?)
 
         fun onFailed(reason: String)
 

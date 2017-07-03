@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--<include layout="@layout/tab_item" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="首页" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_80"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/blue_action_bar"
+        app:tabSelectedTextColor="@color/gray_333333"
+        app:tabTextColor="@color/gray_666666" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_1"
+        android:background="@color/gray_f5f5f5" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

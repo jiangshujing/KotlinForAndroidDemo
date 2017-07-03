@@ -10,8 +10,6 @@ import android.os.Parcelable
  */
 data class ForecastBean(var name: String, var image: String) : Parcelable{
 
-    constructor(source: Parcel): this(source.readString(), source.readString())
-
     override fun writeToParcel(p0: Parcel?, p1: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -19,6 +17,9 @@ data class ForecastBean(var name: String, var image: String) : Parcelable{
     override fun describeContents(): Int {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
+
+    constructor(source: Parcel): this(source.readString(), source.readString())
+
 
 
 }

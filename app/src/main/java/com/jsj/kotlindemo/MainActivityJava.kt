@@ -18,7 +18,6 @@ class MainActivityJava : AppCompatActivity() {
         textView.text = "你好"
 
         val array = arrayOf(1, 2, 3)
-
     }
 
     /**
@@ -29,6 +28,4 @@ class MainActivityJava : AppCompatActivity() {
 
         return age
     }
-
-
 }

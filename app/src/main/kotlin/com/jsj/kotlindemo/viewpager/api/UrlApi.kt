@@ -1,10 +1,8 @@
 package com.jsj.kotlindemo.viewpager.api
 
-import com.jsj.kotlindemo.net.ForecastBean
-import com.jsj.kotlindemo.net.HttpResult
-import retrofit2.http.GET
-import retrofit2.http.Path
-import rx.Observable
+import com.jsj.kotlindemo.viewpager.module.home.bean.Bean
+import io.reactivex.Observable
+import retrofit2.http.*
 
 /**
  *
@@ -12,11 +10,20 @@ import rx.Observable
  * @since 17/6/12
  */
 interface UrlApi {
+    /**
+     * 获取所有数据 -- 使用Retrofit + RxJava
+    //     */
+    @GET("coming_soon")
+    fun getAndroidData(@Query("start") page: Int): Observable<Bean>
+
+    @FormUrlEncoded
+    @POST("in_theaters")
+    fun getHotShowingList(@FieldMap params: Map<String, String>): Observable<Bean>
 
 
     /**
-     * 获取所有数据 -- 使用Retrofit + RxJava
-//     */
-    @GET("data/Android/10/{page}")
-    fun getAndroidData(@Path("page") page:Int): Observable<HttpResult<List<ForecastBean>>>
+     * 获取影人列表
+     */
+    @GET("top250")
+    fun getCelebrityList(@Query("id") page: Int): Observable<Bean>
 }
