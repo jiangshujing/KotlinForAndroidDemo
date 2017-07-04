@@ -40,7 +40,7 @@ class OrderFragment : BaseMVPFragment<CelebrityView, CelebrityPresenter>(), Cele
     override fun onSuccess(date: Bean?) {
         list = date?.subjects
         mAdapter?.setData(list)
-        recyclerview?.setAdapter(mAdapter)
+        recyclerview?.adapter = mAdapter
     }
 
 

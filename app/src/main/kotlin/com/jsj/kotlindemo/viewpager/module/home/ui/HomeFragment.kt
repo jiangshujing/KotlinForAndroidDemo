@@ -1,5 +1,6 @@
 package com.jsj.kotlindemo.viewpager.module.home.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
@@ -7,8 +8,10 @@ import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.jsj.kotlindemo.R
 import com.jsj.kotlindemo.viewpager.ViewPagerAdapter
+import com.jsj.kotlindemo.viewpager.module.search.SearchActivity
 
 /**
  *
@@ -18,12 +21,13 @@ import com.jsj.kotlindemo.viewpager.ViewPagerAdapter
 class HomeFragment : Fragment() {
 
     val fragments: ArrayList<Fragment> = java.util.ArrayList();
-    var list_Title : ArrayList<String> = ArrayList();
+    var list_Title: ArrayList<String> = ArrayList();
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater?.inflate(R.layout.fragment_home, container, false)
         val viewpager = view?.findViewById<ViewPager>(R.id.viewpager)
         val tablayout = view?.findViewById<TabLayout>(R.id.tablayout)
+        val tv_search = view?.findViewById<TextView>(R.id.tv_search)
 
         fragments.clear()
         fragments.add(HotShowingFragment())
@@ -43,6 +47,9 @@ class HomeFragment : Fragment() {
         viewpager?.setAdapter(adapter)
         viewpager?.setOffscreenPageLimit(2)
         tablayout?.setupWithViewPager(viewpager)
+        tv_search?.setOnClickListener {
+            startActivity(Intent(activity, SearchActivity::class.java))
+        }
 
         return view!!;
     }

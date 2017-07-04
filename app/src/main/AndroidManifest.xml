@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".viewpager.DetailsActivity"></activity>
+        <activity android:name=".viewpager.DetailsActivity" />
+        <activity android:name=".viewpager.module.search.SearchActivity"></activity>
     </application>
 
 </manifest>
