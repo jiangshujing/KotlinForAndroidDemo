@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.jsj.kotlindemo.R
 import com.jsj.kotlindemo.viewpager.DetailsActivity
 import com.jsj.kotlindemo.viewpager.module.home.adapter.HomeListAdapter
@@ -82,6 +83,7 @@ class HotShowingFragment : BaseMVPFragment<HotShowingView, HotShowingPresenter>(
 
     override fun onFailed(reason: String, code: Int) {
         swipe_item?.isRefreshing = false
+        Toast.makeText(activity,reason, Toast.LENGTH_SHORT).show()
     }
 
     override fun onSuccess(data: Bean?) {

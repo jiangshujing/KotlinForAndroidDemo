@@ -17,18 +17,15 @@ abstract class BaseMVPFragment<V : IBaseView, P : IBasePresenter<V>> : Fragment(
 
     override var presenter: P? = null
 
-    override fun onCreate(@Nullable savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        presenter = createPresenter()
-    }
-
     override fun onCreateView(inflater: LayoutInflater?, @Nullable container: ViewGroup?, @Nullable savedInstanceState: Bundle?): View? {
+        presenter = createPresenter()
         return super.onCreateView(inflater, container, savedInstanceState)
     }
-
 
     override fun onDestroyView() {
         presenter?.detachView()
         super.onDestroyView()
+
     }
+
 }

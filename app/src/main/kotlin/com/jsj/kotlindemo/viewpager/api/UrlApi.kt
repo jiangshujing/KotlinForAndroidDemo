@@ -20,10 +20,15 @@ interface UrlApi {
     @POST("in_theaters")
     fun getHotShowingList(@FieldMap params: Map<String, String>): Observable<Bean>
 
-
     /**
      * 获取影人列表
      */
     @GET("top250")
     fun getCelebrityList(@Query("id") page: Int): Observable<Bean>
+
+    /**
+     * 搜索
+     */
+    @GET("search")
+    fun getSearchList(@Query("tag") key: String, @Query("start") page: Int, @Query("count") count: Int): Observable<Bean>
 }

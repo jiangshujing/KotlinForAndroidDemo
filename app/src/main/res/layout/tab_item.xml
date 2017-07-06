@@ -7,21 +7,21 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.viewpagerindicator.TabPageIndicator
-        android:id="@+id/tabPageindicator"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="@dimen/size_28"
-        indicator:defaultTabTextColor="@color/black_33"
-        indicator:selectedTabTextColor="@color/blue_0f9cfe"/>
+    <!--<com.viewpagerindicator.TabPageIndicator-->
+        <!--android:id="@+id/tabPageindicator"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:textSize="@dimen/size_28"-->
+        <!--indicator:defaultTabTextColor="@color/black_33"-->
+        <!--indicator:selectedTabTextColor="@color/blue_0f9cfe"/>-->
 
-    <com.viewpagerindicator.UnderlinePageIndicator
-        android:id="@+id/underlinePageindicator"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height_5"
-        android:layout_marginBottom="@dimen/height_5"
-        indicator:selectedColor="@color/blue_0f9cfe"
-        indicator:footerColor="@color/gray_999999"
-        indicator:selectedLength="@dimen/height_400" />
+    <!--<com.viewpagerindicator.UnderlinePageIndicator-->
+        <!--android:id="@+id/underlinePageindicator"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/height_5"-->
+        <!--android:layout_marginBottom="@dimen/height_5"-->
+        <!--indicator:selectedColor="@color/blue_0f9cfe"-->
+        <!--indicator:footerColor="@color/gray_999999"-->
+        <!--indicator:selectedLength="@dimen/height_400" />-->
 
 </LinearLayout>
