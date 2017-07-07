@@ -7,7 +7,7 @@ import android.widget.Toast
 import com.jsj.kotlindemo.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() ,View.OnClickListener{
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +33,18 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
 
         button.setOnClickListener(this);
 
+        //调用嵌套类
+        Test.Nested().nestedTest()
 
+        //调用内部类
+        Test().Inner().innerTest()
 
+        //接口对象
+        Test().setInterFace(object : Test.TestInterFace {
+            override fun test() {
+                println("匿名内部类的实现")
+            }
+        })
     }
 
     override fun onResume() {
@@ -42,8 +52,8 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
     }
 
     override fun onClick(v: View?) {
-        when(v?.id){
-            R.id.button ->{
+        when (v?.id) {
+            R.id.button -> {
                 Toast.makeText(v.context, "button", Toast.LENGTH_SHORT).show();
             }
         }
