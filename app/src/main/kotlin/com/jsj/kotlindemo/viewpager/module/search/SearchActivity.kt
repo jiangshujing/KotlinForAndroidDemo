@@ -13,7 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.jsj.kotlindemo.R
 import com.jsj.kotlindemo.dao.UserDao
-import com.jsj.kotlindemo.viewpager.base.MyApplication
+import com.jsj.kotlindemo.base.MyApplication
 import com.jsj.kotlindemo.viewpager.module.search.bean.User
 
 

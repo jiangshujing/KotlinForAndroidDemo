@@ -7,9 +7,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.jsj.kotlindemo.R
 import com.jsj.kotlindemo.dao.UserDao
-import com.jsj.kotlindemo.viewpager.base.MyApplication
+import com.jsj.kotlindemo.base.MyApplication
 import com.jsj.kotlindemo.viewpager.module.search.adapter.SearchAdapter
 import com.jsj.kotlindemo.viewpager.module.search.bean.User
 
@@ -27,8 +28,17 @@ class SearchHistoryFragment(listener: (searchKey: String) -> Unit) : Fragment() 
     var listener: ((searchKey: String) -> Unit)? = listener;
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        var view = inflater?.inflate(R.layout.incloud_recyclerview, container, false)
+        var view = inflater?.inflate(R.layout.fragment_search_history, container, false)
 
+        mUserDao = (MyApplication.instance() as MyApplication).getDaoSession().userDao
+        view?.findViewById<TextView>(R.id.tv_clean)?.setOnClickListener {
+            mUserDao?.deleteAll()//清空搜索记录
+            //刷新adapter
+            mList?.clear()
+            mUserDao?.loadAll()?.let { mList?.addAll(it) } //查询数据库
+            mAdapter?.setData(mList)
+            mAdapter?.notifyDataSetChanged()
+        }
         recyclerview = view?.findViewById<RecyclerView>(R.id.recyclerview)
 
         //设置布局管理器
@@ -40,7 +50,7 @@ class SearchHistoryFragment(listener: (searchKey: String) -> Unit) : Fragment() 
             listener?.invoke(searchKey)
         }
 
-        mUserDao = (MyApplication.instance() as MyApplication).getDaoSession().userDao
+
 //        mUserDao?.loadAll()?.let { mList?.addAll(it) } //查询数据库
 
         //通过Id倒序排序

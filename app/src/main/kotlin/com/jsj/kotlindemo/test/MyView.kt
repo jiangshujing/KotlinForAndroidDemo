@@ -1,4 +1,4 @@
-package com.jsj.kotlindemo
+package com.jsj.kotlindemo.test
 
 import android.content.Context
 import android.util.AttributeSet

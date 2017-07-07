@@ -1,9 +1,10 @@
-package com.jsj.kotlindemo
+package com.jsj.kotlindemo.test
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
+import com.jsj.kotlindemo.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() ,View.OnClickListener{
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
 //        });
 
         button.setOnClickListener(this);
+
+
+
     }
 
     override fun onResume() {

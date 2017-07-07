@@ -1,4 +1,4 @@
-package com.jsj.kotlindemo
+package com.jsj.kotlindemo.test
 
 /**
  *
@@ -8,7 +8,7 @@ package com.jsj.kotlindemo
 /**
  * 子类继承User类
  */
-class Student : User() ,Reading {
+class Student : User() , Reading {
 
     override fun study() {
     }

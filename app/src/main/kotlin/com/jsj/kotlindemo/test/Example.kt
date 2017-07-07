@@ -1,4 +1,4 @@
-package com.jsj.kotlindemo
+package com.jsj.kotlindemo.test
 
 import android.util.Log
 import kotlin.properties.Delegates

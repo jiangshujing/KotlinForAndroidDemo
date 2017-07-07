@@ -1,4 +1,4 @@
-package com.jsj.kotlindemo.viewpager.utils
+package com.jsj.kotlindemo.utils
 
 import android.content.Context
 import android.view.View

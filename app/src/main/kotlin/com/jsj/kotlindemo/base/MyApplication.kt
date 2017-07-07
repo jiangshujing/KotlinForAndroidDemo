@@ -1,8 +1,9 @@
-package com.jsj.kotlindemo.viewpager.base
+package com.jsj.kotlindemo.base
 
 import android.app.Application
 import com.jsj.kotlindemo.dao.DaoMaster
 import com.jsj.kotlindemo.dao.DaoSession
+import com.jsj.kotlindemo.test.DelegatesExt
 
 /**
  *
@@ -14,8 +15,8 @@ class MyApplication : Application() {
     private var daoSession: DaoSession? = null
 
     companion object {
-        private var instance: Application? = null;
-        fun instance() = instance;
+        private var instance: Application by DelegatesExt.notNullSingleValue();
+        fun instance() = instance!!;
     }
 
     override fun onCreate() {
