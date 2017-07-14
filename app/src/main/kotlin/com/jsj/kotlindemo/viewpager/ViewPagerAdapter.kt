@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter
  * @author jsj
  * @since 17/6/10
  */
-class ViewPagerAdapter(tabTitle: List<String>?, fragments: List<Fragment>, fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class ViewPagerAdapter(tabTitle: ArrayList<String>?, fragments: List<Fragment>?, fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     var fragments: List<Fragment>? = null;
     var tabTitle: List<String>? = null;

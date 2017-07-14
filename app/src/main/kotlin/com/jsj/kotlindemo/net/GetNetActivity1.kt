@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.jsj.kotlindemo.R
-import org.jetbrains.anko.async
+import org.jetbrains.anko.custom.async
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 import java.net.URL

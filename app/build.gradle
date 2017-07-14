@@ -46,7 +46,16 @@ dependencies {
     })
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'org.jetbrains.kotlin:kotlin-stdlib:1.1.2'
-    compile 'org.jetbrains.anko:anko-sdk15:0.8.2'
+    // Anko
+    compile 'org.jetbrains.anko:anko-sdk25:0.10.0' // sdk19, sdk21, sdk23 are also available
+    compile 'org.jetbrains.anko:anko-support-v4:0.10.0' // In case you need support-v4 bindings
+    compile 'org.jetbrains.anko:anko-appcompat-v7:0.10.0' // For appcompat-v7 bindings
+    compile "org.jetbrains.anko:anko-coroutines:0.10.0"
+    compile 'org.jetbrains.anko:anko-recyclerview-v7:0.10.0'
+    compile "org.jetbrains.anko:anko-recyclerview-v7-coroutines:0.10.0"
+    compile "org.jetbrains.anko:anko-design:0.10.0"
+
+
     compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     compile 'com.squareup.picasso:picasso:2.3.2'

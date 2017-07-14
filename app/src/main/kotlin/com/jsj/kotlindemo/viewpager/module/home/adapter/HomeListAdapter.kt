@@ -73,8 +73,8 @@ class HomeListAdapter constructor(context: Context?) : RecyclerView.Adapter<Recy
     }
 
     class ItemViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-        val tv_title: TextView? = itemView?.findViewById<TextView>(R.id.tv_title)
-        val ll_item = itemView?.findViewById<LinearLayout>(R.id.ll_item)
+        val tv_title: TextView? = itemView?.findViewById<TextView>(R.id.tv_title) as TextView
+        val ll_item = itemView?.findViewById<LinearLayout>(R.id.ll_item) as LinearLayout
         val tv_collect_count = itemView?.findViewById<TextView>(R.id.tv_collect_count)
         val tv_directors = itemView?.findViewById<TextView>(R.id.tv_directors)
         val tv_casts = itemView?.findViewById<TextView>(R.id.tv_casts)
