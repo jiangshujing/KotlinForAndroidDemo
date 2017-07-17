@@ -35,8 +35,19 @@ class Fragment1 : BaseFragment() {
                     width = wrapContent
                 }
 
-            }
 
+                weightTextView {
+//                    normalDrawable = resources.getDrawable(R.mipmap.default_avatar)
+                    text = "lalalallallaal"
+                    textSize = 20f
+                    textColor = resources.getColor(R.color.black_33)
+                    isSelected = true
+                }.lparams {
+                    height = wrapContent
+                    width = wrapContent
+                }
+
+            }
         }.view
 
 
@@ -44,4 +55,6 @@ class Fragment1 : BaseFragment() {
 
         return view;
     }
+
+
 }

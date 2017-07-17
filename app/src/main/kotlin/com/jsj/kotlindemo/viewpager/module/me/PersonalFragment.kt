@@ -8,11 +8,13 @@ import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewManager
 import android.widget.LinearLayout
-import android.widget.Toast
 import com.jsj.kotlindemo.R
+import com.jsj.kotlindemo.view.WeightTextView
 import com.jsj.kotlindemo.viewpager.ViewPagerAdapter
 import org.jetbrains.anko.*
+import org.jetbrains.anko.custom.ankoView
 import org.jetbrains.anko.design.tabLayout
 import org.jetbrains.anko.support.v4.UI
 import org.jetbrains.anko.support.v4.viewPager
@@ -34,9 +36,6 @@ class PersonalFragment : Fragment() {
         var viewPager: ViewPager? = null
 
         var fragments: ArrayList<Fragment>? = ArrayList()
-
-//        val view: View = inflater!!.inflate(R.layout.fragment_personal, container,false)
-
 
         var view = UI {
             linearLayout {
@@ -72,7 +71,8 @@ class PersonalFragment : Fragment() {
                         textColor = Color.WHITE
                         text = "设置"
                         setOnClickListener {
-                            Toast.makeText(activity,"设置",Toast.LENGTH_SHORT).show()
+                            showDialog();
+//                            Toast.makeText(activity, "设置", Toast.LENGTH_SHORT).show()
                         }
 
                     }.lparams {
@@ -132,9 +132,22 @@ class PersonalFragment : Fragment() {
 //        tab?.setTabMode(TabLayout.MODE_SCROLLABLE);//tab可以滚动，tab宽度根据内容自动缩放
 
         viewPager?.adapter = adapter
-        viewPager?.setOffscreenPageLimit(arr.size-1)
+        viewPager?.setOffscreenPageLimit(arr.size - 1)
         tab?.setupWithViewPager(viewPager)
 
         return view;
     }
+
+    fun showDialog() {
+//        return AlertDialog.Builder(activity)
+//                .setTitle("设置")
+//                .setNegativeButton("") {
+//                    toast(text = "")
+//                }
+//                .create()
+//                .show()
+    }
 }
+
+inline fun ViewManager.weightTextView() = weightTextView {}
+inline fun ViewManager.weightTextView(init: WeightTextView.() -> Unit) = ankoView({ WeightTextView(it) }, 0, init)
