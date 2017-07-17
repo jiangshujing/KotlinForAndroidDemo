@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--为避免根节点属性无效，添加一层-->
+    <LinearLayout
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/white_solid_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30px"
+            android:layout_marginTop="30px"
+            android:gravity="center"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:singleLine="true"
+            android:text="提示"
+            android:textColor="@color/gray_333333"
+            android:textSize="30px" />
+
+        <TextView
+            android:id="@+id/dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30px"
+            android:gravity="center"
+            android:minHeight="100px"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:textColor="@color/gray_999999"
+            android:textSize="24px" />
+
+        <include layout="@layout/line_1px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialog_cancel"
+                android:layout_width="0dp"
+                android:layout_height="88px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="20px"
+                android:paddingRight="20px"
+                android:singleLine="true"
+                android:text="取消"
+                android:textColor="@color/gray_666666"
+                android:textSize="30px" />
+
+            <include layout="@layout/line_1px_grey_vertical" />
+
+            <TextView
+                android:id="@+id/dialog_ok"
+                android:layout_width="0dp"
+                android:layout_height="88px"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="20px"
+                android:paddingRight="20px"
+                android:singleLine="true"
+                android:text="确定"
+                android:textColor="@color/blue_action_bar"
+                android:textSize="30px" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

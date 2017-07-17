@@ -1,18 +1,18 @@
 package com.jsj.kotlindemo.viewpager.module.me
 
+import android.app.Activity
+import android.app.AlertDialog
 import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.ViewManager
+import android.view.*
 import android.widget.LinearLayout
 import com.jsj.kotlindemo.R
 import com.jsj.kotlindemo.view.WeightTextView
 import com.jsj.kotlindemo.viewpager.ViewPagerAdapter
+import kotlinx.android.synthetic.main.dialog.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.custom.ankoView
 import org.jetbrains.anko.design.tabLayout
@@ -139,13 +139,66 @@ class PersonalFragment : Fragment() {
     }
 
     fun showDialog() {
-//        return AlertDialog.Builder(activity)
-//                .setTitle("设置")
-//                .setNegativeButton("") {
-//                    toast(text = "")
-//                }
-//                .create()
-//                .show()
+
+//        alert("我是Dialog") {
+//
+//            yesButton { toast("yes") }
+//            noButton { toast("no") }
+//        }.show()
+
+        val dialog = showLayoutDialog {
+            setContentView(R.layout.dialog)
+            setCanceledOnTouchOutside(false)
+            setCancelable(true)
+//            removeY = -300
+            gravity = Gravity.CENTER
+        }
+
+        with(dialog) {
+            dialog_content.setText("我是一个提示框")
+            dialog_ok.setOnClickListener {
+                dismiss()
+            }
+        }
+    }
+
+
+    // AlertDialog的模板
+    fun Activity.showLayoutDialog(init: AlertDialog.() -> Unit): AlertDialog {
+        val view = AlertDialog.Builder(this).create()
+        view.show()
+        view.init()
+        val window = view.window
+        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
+        return view
+    }
+
+    var AlertDialog.removeY: Int
+        get() {
+            val window = window
+            val lp = window.attributes
+            return lp.y
+        }
+        set(value) {
+            val window = window
+            val lp = window.attributes
+            lp.y = value
+        }
+
+    var AlertDialog.gravity: Int
+        get() {
+            val window = window
+            val lp = window.attributes
+            return lp.y
+        }
+        set(value) {
+            val window = window
+            val lp = window.attributes
+            lp.gravity = value
+        }
+
+    fun Fragment.showLayoutDialog(init: AlertDialog.() -> Unit): AlertDialog {
+        return activity.showLayoutDialog { init() }
     }
 }
 
