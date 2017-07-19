@@ -156,9 +156,6 @@ class PersonalFragment : Fragment() {
             //测试gitFlow
             //模拟更新代码
             //
-            //
-            //在 release/3.0 上开发的
-            // 新功能开发
         }
 
         with(dialog) {
