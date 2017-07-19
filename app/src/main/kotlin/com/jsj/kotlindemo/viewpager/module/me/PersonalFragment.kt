@@ -157,6 +157,8 @@ class PersonalFragment : Fragment() {
             //模拟更新代码
             //
             //
+            //在 release/3.0 上开发的
+            // 新功能开发
         }
 
         with(dialog) {
