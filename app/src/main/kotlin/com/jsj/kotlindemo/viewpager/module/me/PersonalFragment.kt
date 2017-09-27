@@ -161,8 +161,7 @@ class PersonalFragment : Fragment() {
         with(dialog) {
             dialog_content.setText("我是一个提示框")
             dialog_ok.setOnClickListener {
-                dismiss()
-            }
+                dismiss() }
         }
     }
 

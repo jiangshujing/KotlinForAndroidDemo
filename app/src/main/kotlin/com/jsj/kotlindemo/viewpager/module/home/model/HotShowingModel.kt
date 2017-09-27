@@ -2,18 +2,15 @@ package com.jsj.kotlindemo.viewpager.module.home.model
 
 import android.content.Context
 import android.util.Log
-import com.jsj.kotlindemo.viewpager.api.OkHttpClientUtils
 import com.jsj.kotlindemo.viewpager.api.UrlApi
 import com.jsj.kotlindemo.viewpager.module.home.bean.Bean
 import com.jsj.kotlindemo.viewpager.module.home.presenter.HotShowingPresenter
 import com.jsj.kotlindemo.viewpager.mvp_base.BaseModel
+import com.jsj.kotlindemo.viewpager.rxHttp.HttpHelper
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  *
@@ -35,13 +32,15 @@ class HotShowingModel() : BaseModel<HotShowingPresenter>() {
      */
     fun getHotShowingListData(start: Int, count: Int) {
 
-        val retrofit = Retrofit.Builder()
-                .baseUrl("https://api.douban.com/v2/movie/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(OkHttpClientUtils.getOkHttpClient())
-                .build()
-        val movieService = retrofit.create(UrlApi::class.java)
+//        val retrofit = Retrofit.Builder()
+//                .baseUrl("https://api.douban.com/v2/movie/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                .client(OkHttpClientUtils.getOkHttpClient())
+//                .build()
+//        val movieService = retrofit.create(UrlApi::class.java)
+
+
 
         var params = hashMapOf<String, String>()
         params.put("start", start.toString())
@@ -49,7 +48,9 @@ class HotShowingModel() : BaseModel<HotShowingPresenter>() {
 
         Log.e("------",params.toList().toString())
 
-        movieService.getHotShowingList(params)
+
+
+        HttpHelper.service(UrlApi::class.java).getHotShowingList(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object : Observer<Bean> {

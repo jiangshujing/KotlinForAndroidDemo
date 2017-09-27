@@ -8,7 +8,7 @@ package com.jsj.kotlindemo.test
 /**
  * 子类继承User类
  */
-class Student : User() , Reading {
+class Student(id: Int, name: String) : User(id, name), Reading {
 
     override fun study() {
     }
