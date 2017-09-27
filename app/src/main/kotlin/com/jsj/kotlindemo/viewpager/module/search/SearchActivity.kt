@@ -12,8 +12,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.jsj.kotlindemo.R
-import com.jsj.kotlindemo.dao.UserDao
 import com.jsj.kotlindemo.base.MyApplication
+import com.jsj.kotlindemo.dao.UserDao
 import com.jsj.kotlindemo.viewpager.module.search.bean.User
 
 
@@ -44,7 +44,7 @@ class SearchActivity : AppCompatActivity(), (String) -> Unit {
 
         et_search?.setOnEditorActionListener(object : TextView.OnEditorActionListener {
             override fun onEditorAction(v: TextView, actionId: Int, event: KeyEvent?): Boolean {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH || event != null && event!!.getKeyCode() === KeyEvent.KEYCODE_SEARCH) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH || event != null && event.keyCode === KeyEvent.KEYCODE_SEARCH) {
                     Toast.makeText(this@SearchActivity, "搜索", Toast.LENGTH_SHORT).show()
 
                     var mUser = User()

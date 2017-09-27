@@ -23,6 +23,7 @@ class Test {
     inner class Inner {
         fun innerTest() {
             println("内部类中的方法")
+            val test = this@Test
         }
     }
 
