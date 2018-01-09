@@ -152,13 +152,16 @@ class PersonalFragment : Fragment() {
             setCancelable(true)
 //            removeY = -300
             gravity = Gravity.CENTER
+
+            //测试gitFlow
+            //模拟更新代码
+            //
         }
 
         with(dialog) {
             dialog_content.setText("我是一个提示框")
             dialog_ok.setOnClickListener {
-                dismiss()
-            }
+                dismiss() }
         }
     }
 
